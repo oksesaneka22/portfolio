@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleksandr Oksentiuk - DevOps Engineer & Python Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Dark theme animated gradient background */
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+        }
+        
+        .animated-bg {
+            background: linear-gradient(135deg, #0a1628, #0f1e3a, #162747, #0f1e3a, #0a1628);
+            background-size: 300% 300%;
+            animation: gradientShift 1500s ease infinite;
+        }
+        
+        /* Fade in animation for content */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Staggered animations for list items */
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+        .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+        .stagger-5 { animation-delay: 0.5s; opacity: 0; }
+        .stagger-6 { animation-delay: 0.6s; opacity: 0; }
+        
+        /* Glowing text effect */
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(96, 165, 250, 0.5), 0 0 30px rgba(96, 165, 250, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(96, 165, 250, 0.8), 0 0 40px rgba(96, 165, 250, 0.5);
+            }
+        }
+        
+        .glow-text {
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Animated underline with gradient */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #3b82f6, #60a5fa, #93c5fd);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                width: 60px;
+            }
+            50% {
+                opacity: 0.7;
+                width: 80px;
+            }
+        }
+        
+        /* Enhanced hover effects with glow */
+        .skill-tag {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Project card with advanced hover animation */
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Animated checkmark icons */
+        @keyframes checkDraw {
+            0% {
+                stroke-dashoffset: 100;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .check-icon {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+        }
+        
+        .project-card:hover .check-icon {
+            animation: checkDraw 0.6s ease-in-out forwards;
+        }
+        
+        /* Shimmer effect for header */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+        
+        .shimmer {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+    <!-- Dark themed header with animated gradient background -->
+    <header class="animated-bg text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 shimmer pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="space-y-4 fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
+                    Hi, I'm <span class="glow-text text-blue-400">Oleksandr Oksentiuk</span>
+                </h1>
+                <p class="text-2xl md:text-3xl font-light text-blue-200 stagger-1 fade-in-up">
+                    DevOps Engineer & Python Developer
+                </p>
+                <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed stagger-2 fade-in-up">
+                    I build automated, secure, and scalable systems. My focus is on cloud infrastructure, CI/CD pipelines, and monitoring solutions. Currently studying Computer Science at UCU and constantly improving my skills in DevOps, networks, and cybersecurity.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dark themed main content -->
+    <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
+        
+        <!-- About Me Section -->
+        <section class="fade-in-up stagger-3">
+            <h2 class="text-3xl font-bold mb-6 section-title">💼 About Me</h2>
+            <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-8 space-y-4 leading-relaxed hover:border-slate-700 transition-all duration-300">
+                <p class="text-slate-300">
+                    I'm a first-year Computer Science student at the <strong class="text-blue-400">Ukrainian Catholic University</strong>, passionate about infrastructure automation, system security, and efficient software delivery.
+                </p>
+                <p class="text-slate-300">
+                    I started coding with Python and soon moved into DevOps practices — configuring CI/CD, containerizing applications, and managing Kubernetes clusters. I love solving practical problems, optimizing workflows, and learning new technologies.
+                </p>
+                <p class="text-slate-300">
+                    Outside of tech, I enjoy analyzing systems (both digital and human) and experimenting with small side projects that challenge my understanding of automation and scalability.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dark themed skills section with animated tags -->
+        <section class="fade-in-up stagger-4">
+            <h2 class="text-3xl font-bold mb-6 section-title">⚙️ Skills</h2>
+            <div class="space-y-6">
+                
+                <!-- Languages -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-blue-500/20 text-blue-300 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Python</span>
+                        <span class="skill-tag bg-blue-500/20 text-blue-300 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Bash</span>
+                        <span class="skill-tag bg-blue-500/20 text-blue-300 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">YAML</span>
+                        <span class="skill-tag bg-blue-500/20 text-blue-300 border border-blue-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">SQL</span>
+                    </div>
+                </div>
+
+                <!-- DevOps Tools -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">DevOps Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Docker</span>
+                        <span class="skill-tag bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Kubernetes</span>
+                        <span class="skill-tag bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Terraform</span>
+                        <span class="skill-tag bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Ansible</span>
+                    </div>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">CI/CD</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">GitHub Actions</span>
+                        <span class="skill-tag bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Jenkins</span>
+                        <span class="skill-tag bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">GitLab CI</span>
+                    </div>
+                </div>
+
+                <!-- Cloud & Infrastructure -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">Cloud & Infrastructure</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-orange-500/20 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">AWS</span>
+                        <span class="skill-tag bg-orange-500/20 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">S3</span>
+                        <span class="skill-tag bg-orange-500/20 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">EFS</span>
+                        <span class="skill-tag bg-orange-500/20 text-orange-300 border border-orange-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Linux Administration</span>
+                    </div>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">Monitoring</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-rose-500/20 text-rose-300 border border-rose-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Prometheus</span>
+                        <span class="skill-tag bg-rose-500/20 text-rose-300 border border-rose-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Grafana</span>
+                    </div>
+                </div>
+
+                <!-- Networking & Security -->
+                <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-slate-200">Networking & Security</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">Firewalls</span>
+                        <span class="skill-tag bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">VPN</span>
+                        <span class="skill-tag bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">System Hardening</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dark themed project section with enhanced animations -->
+        <section class="fade-in-up stagger-5">
+            <h2 class="text-3xl font-bold mb-6 section-title">🚀 Projects / Experience</h2>
+            
+            <!-- Project Card -->
+            <div class="project-card bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 overflow-hidden">
+                <div class="p-8 relative z-10">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-slate-100 mb-2 md:mb-0">SoundScape — Spotify-like Web App</h3>
+                        <span class="text-sm font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30 px-3 py-1 rounded-full self-start backdrop-blur-sm">2024–2025</span>
+                    </div>
+                    
+                    <p class="text-slate-400 font-medium mb-4">DevOps Engineer</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Built CI/CD pipeline using GitHub Actions</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Configured cloud infrastructure with Terraform</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Deployed scalable backend on Kubernetes</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Set up monitoring with Prometheus & Grafana</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group">
+                        <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Dark themed footer -->
+    <footer class="bg-slate-900/80 backdrop-blur-sm border-t border-slate-800 text-slate-400 py-12 mt-20">
+        <div class="max-w-4xl mx-auto px-6 text-center fade-in-up stagger-6">
+            <p class="text-lg mb-4 text-slate-300">Let's connect and build something amazing together.</p>
+            <p class="text-sm">&copy; 2025 Oleksandr Oksentiuk. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
