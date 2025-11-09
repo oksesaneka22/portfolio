@@ -7,27 +7,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Dark theme animated gradient background */
         @keyframes gradientShift {
-            0%, 100% {
+            0% {
                 background-position: 0% 0%;
             }
-            50% {
-                background-position: 100% 100%;
+            20% {
+                background-position: 30% 20%;
+            }
+            40% {
+                background-position: 70% 40%;
+            }
+            60% {
+                background-position: 50% 70%;
+            }
+            80% {
+                background-position: 20% 50%;
+            }
+            100% {
+                background-position: 0% 0%;
             }
         }
-        
+
         .animated-bg {
-            background: linear-gradient(135deg, #0a1628, #0f1e3a, #162747, #0f1e3a, #0a1628);
-            background-size: 300% 300%;
-            animation: gradientShift 1500s ease infinite;
+            background: linear-gradient(135deg, #000000, #020610, #000000, #030b18, #000000, #020610, #000000);
+            background-size: 400% 400%;
+            animation: gradientShift 15000s ease-in-out infinite;
         }
-        
+
         /* Fade in animation for content */
         @keyframes fadeInUp {
             from {
@@ -39,11 +51,11 @@
                 transform: translateY(0);
             }
         }
-        
+
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
-        
+
         /* Staggered animations for list items */
         .stagger-1 { animation-delay: 0.1s; opacity: 0; }
         .stagger-2 { animation-delay: 0.2s; opacity: 0; }
@@ -51,7 +63,7 @@
         .stagger-4 { animation-delay: 0.4s; opacity: 0; }
         .stagger-5 { animation-delay: 0.5s; opacity: 0; }
         .stagger-6 { animation-delay: 0.6s; opacity: 0; }
-        
+
         /* Glowing text effect */
         @keyframes glow {
             0%, 100% {
@@ -61,11 +73,11 @@
                 text-shadow: 0 0 30px rgba(96, 165, 250, 0.8), 0 0 40px rgba(96, 165, 250, 0.5);
             }
         }
-        
+
         .glow-text {
             animation: glow 3s ease-in-out infinite;
         }
-        
+
         /* Floating animation */
         @keyframes float {
             0%, 100% {
@@ -75,16 +87,16 @@
                 transform: translateY(-10px);
             }
         }
-        
+
         .float {
             animation: float 3s ease-in-out infinite;
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
         }
-        
+
         /* Animated underline with gradient */
         .section-title::after {
             content: '';
@@ -96,7 +108,7 @@
             background: linear-gradient(to right, #3b82f6, #60a5fa, #93c5fd);
             animation: pulse 2s ease-in-out infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% {
                 opacity: 1;
@@ -107,25 +119,25 @@
                 width: 80px;
             }
         }
-        
+
         /* Enhanced hover effects with glow */
         .skill-tag {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
-        
+
         .skill-tag:hover {
             transform: translateY(-4px) scale(1.05);
             box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
         }
-        
+
         /* Project card with advanced hover animation */
         .project-card {
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
-        
+
         .project-card::before {
             content: '';
             position: absolute;
@@ -137,16 +149,16 @@
             opacity: 0;
             transition: opacity 0.5s ease;
         }
-        
+
         .project-card:hover::before {
             opacity: 1;
         }
-        
+
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
         }
-        
+
         /* Animated checkmark icons */
         @keyframes checkDraw {
             0% {
@@ -156,16 +168,16 @@
                 stroke-dashoffset: 0;
             }
         }
-        
+
         .check-icon {
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
         }
-        
+
         .project-card:hover .check-icon {
             animation: checkDraw 0.6s ease-in-out forwards;
         }
-        
+
         /* Shimmer effect for header */
         @keyframes shimmer {
             0% {
@@ -175,12 +187,12 @@
                 background-position: 1000px 0;
             }
         }
-        
+
         .shimmer {
             background: linear-gradient(
                 90deg,
                 rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0) 50%,
                 rgba(255, 255, 255, 0) 100%
             );
             background-size: 1000px 100%;
@@ -209,20 +221,56 @@
 
     <!-- Dark themed main content -->
     <main class="max-w-4xl mx-auto px-6 py-16 space-y-20">
-        
+
         <!-- About Me Section -->
         <section class="fade-in-up stagger-3">
             <h2 class="text-3xl font-bold mb-6 section-title">💼 About Me</h2>
-            <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-8 space-y-4 leading-relaxed hover:border-slate-700 transition-all duration-300">
-                <p class="text-slate-300">
-                    I'm a first-year Computer Science student at the <strong class="text-blue-400">Ukrainian Catholic University</strong>, passionate about infrastructure automation, system security, and efficient software delivery.
+            <!-- Made text box bigger with more padding, increased text size, and replaced content with new bio -->
+            <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-10 md:p-12 space-y-5 leading-relaxed hover:border-slate-700 transition-all duration-300">
+                <p class="text-slate-300 text-lg md:text-xl">
+                    I'm a <strong class="text-blue-400">DevOps Engineer</strong>, <strong class="text-blue-400">Python Developer</strong>, and <strong class="text-blue-400">Computer Science student</strong> at the Ukrainian Catholic University (UCU) passionate about automation, infrastructure reliability, and cloud technologies. My goal is to bridge the gap between development, operations, and security through modern DevOps practices and continuous improvement.
                 </p>
-                <p class="text-slate-300">
-                    I started coding with Python and soon moved into DevOps practices — configuring CI/CD, containerizing applications, and managing Kubernetes clusters. I love solving practical problems, optimizing workflows, and learning new technologies.
+                <p class="text-slate-300 text-lg md:text-xl">
+                    I work with tools and technologies that power scalable and efficient systems:
                 </p>
-                <p class="text-slate-300">
-                    Outside of tech, I enjoy analyzing systems (both digital and human) and experimenting with small side projects that challenge my understanding of automation and scalability.
+                <ol class="list-decimal list-inside space-y-2 text-slate-300 text-base md:text-lg pl-4">
+                    <li>CI/CD automation — GitHub Actions, Jenkins, GitLab CI, Docker build pipelines</li>
+                    <li>Containerization & orchestration — Docker, Kubernetes (K8s), Helm, Compose</li>
+                    <li>Infrastructure as Code (IaC) — Terraform, Ansible, cloud provisioning (AWS, GCP)</li>
+                    <li>Linux system administration — Bash scripting, process automation, permissions, networking</li>
+                    <li>Monitoring & observability — Prometheus, Grafana, Loki, Alertmanager, uptime tracking</li>
+                    <li>Networking & cybersecurity — VPN, firewalls, access control, system hardening, secure automation</li>
+                    <li>Version control & collaboration — Git, GitHub, GitLab, Agile teamwork</li>
+                </ol>
+                <p class="text-slate-300 text-lg md:text-xl">
+                    I'm skilled in <strong class="text-blue-400">Python scripting</strong> for automation, infrastructure management, and performance optimization. My interests also extend to cloud computing, site reliability engineering (SRE), and DevSecOps — ensuring systems are not only fast and reliable but also secure by design.
                 </p>
+                <p class="text-slate-300 text-lg md:text-xl">
+                    Driven by curiosity and continuous learning, I enjoy designing robust CI/CD pipelines, improving system uptime, and automating repetitive workflows to make development and deployment seamless. I value clean architecture, documentation, and collaborative engineering culture.
+                </p>
+
+                <div class="pt-4 border-t border-slate-700 space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Key Skills:</h3>
+                        <p class="text-slate-300 text-base md:text-lg">
+                            DevOps • Python • Linux • CI/CD • Docker • Kubernetes • Terraform • Ansible • AWS • GitHub Actions • Jenkins • Prometheus • Grafana • Networks • Security • Cloud Infrastructure • Infrastructure as Code (IaC) • Monitoring • Automation • Scripting • Troubleshooting
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Goals:</h3>
+                        <p class="text-slate-300 text-base md:text-lg">
+                            To grow as a DevOps / Cloud Engineer, contribute to production-grade projects, and continue mastering automation, reliability engineering, and security in large-scale distributed systems.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-400 mb-2">Open to:</h3>
+                        <p class="text-slate-300 text-base md:text-lg">
+                            Internships, collaborative DevOps projects, cloud infrastructure work, and opportunities to design scalable automation pipelines or contribute to open-source DevOps tooling.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -230,7 +278,7 @@
         <section class="fade-in-up stagger-4">
             <h2 class="text-3xl font-bold mb-6 section-title">⚙️ Skills</h2>
             <div class="space-y-6">
-                
+
                 <!-- Languages -->
                 <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-6 hover:border-slate-700 transition-all duration-300">
                     <h3 class="text-xl font-semibold mb-4 text-slate-200">Languages</h3>
@@ -299,7 +347,7 @@
         <!-- Dark themed project section with enhanced animations -->
         <section class="fade-in-up stagger-5">
             <h2 class="text-3xl font-bold mb-6 section-title">🚀 Projects / Experience</h2>
-            
+
             <!-- Project Card -->
             <div class="project-card bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 overflow-hidden">
                 <div class="p-8 relative z-10">
@@ -307,9 +355,9 @@
                         <h3 class="text-2xl font-bold text-slate-100 mb-2 md:mb-0">SoundScape — Spotify-like Web App</h3>
                         <span class="text-sm font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30 px-3 py-1 rounded-full self-start backdrop-blur-sm">2024–2025</span>
                     </div>
-                    
+
                     <p class="text-slate-400 font-medium mb-4">DevOps Engineer</p>
-                    
+
                     <ul class="space-y-3 mb-6">
                         <li class="flex items-start group">
                             <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -336,7 +384,7 @@
                             <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Set up monitoring with Prometheus & Grafana</span>
                         </li>
                     </ul>
-                    
+
                     <a href="#" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group">
                         <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
