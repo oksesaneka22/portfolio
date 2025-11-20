@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oleksandr Oksentiuk - DevOps Engineer & Python Developer</title>
+    <title>Oleksandr Oksentiuk - DevOps Engineer</title>
     <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/public/favicon.svg">
     <link rel="apple-touch-icon" href="/public/favicon.svg">
@@ -207,13 +207,23 @@
     <!-- Dark themed header with animated gradient background -->
     <header class="animated-bg text-white py-20 relative overflow-hidden">
         <div class="absolute inset-0 shimmer pointer-events-none"></div>
+        <!-- Added contact button to header -->
+        <div class="absolute top-6 right-6 z-20">
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="flex items-center space-x-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border border-blue-500/30 px-6 py-3 rounded-lg transition-all hover:scale-105 backdrop-blur-sm font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span>Contact Me</span>
+            </button>
+        </div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="space-y-4 fade-in-up">
                 <h1 class="text-5xl md:text-6xl font-bold tracking-tight">
                     Hi, I'm <span class="glow-text text-blue-400">Oleksandr Oksentiuk</span>
                 </h1>
+                <!-- Removed "& Python Developer" from subtitle -->
                 <p class="text-2xl md:text-3xl font-light text-blue-200 stagger-1 fade-in-up">
-                    DevOps Engineer & Python Developer
+                    DevOps Engineer
                 </p>
                 <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed stagger-2 fade-in-up">
                     I build automated, secure, and scalable systems. My focus is on cloud infrastructure, CI/CD pipelines, and monitoring solutions. Currently studying Computer Science at UCU and constantly improving my skills in DevOps, networks, and cybersecurity.
@@ -263,8 +273,73 @@
             </div>
         </section>
 
-        <!-- Dark themed skills section with animated tags -->
+        <!-- Moved Projects section here (after About Me, before Skills) -->
+        <!-- Dark themed project section with enhanced animations -->
         <section class="fade-in-up stagger-4">
+            <h2 class="text-3xl font-bold mb-6 section-title">🚀 Projects / Experience</h2>
+
+            <!-- Project Card -->
+            <div class="project-card bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 overflow-hidden">
+                <div class="p-8 relative z-10">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-slate-100 mb-2 md:mb-0">SoundScape — Spotify-like Web App</h3>
+                        <span class="text-sm font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30 px-3 py-1 rounded-full self-start backdrop-blur-sm">Jan 2025 - Mar 2025</span>
+                    </div>
+
+                    <p class="text-slate-400 font-medium mb-4">DevOps Engineer</p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Built CI/CD pipeline using GitHub Actions</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Configured cloud infrastructure with Terraform</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Deployed scalable backend on Kubernetes</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Set up monitoring with Prometheus & Grafana</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Reduced deployment time by 80%</span>
+                        </li>
+                        <li class="flex items-start group">
+                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Handled 1000 users with no lag</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://github.com/oksesaneka22/SoundScape" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group">
+                        <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moved Skills section here (after Projects) -->
+        <!-- Dark themed skills section with animated tags -->
+        <section class="fade-in-up stagger-5">
             <h2 class="text-3xl font-bold mb-6 section-title">⚙️ Skills</h2>
             <div class="space-y-6">
 
@@ -367,69 +442,6 @@
             </div>
         </section>
 
-        <!-- Dark themed project section with enhanced animations -->
-        <section class="fade-in-up stagger-5">
-            <h2 class="text-3xl font-bold mb-6 section-title">🚀 Projects / Experience</h2>
-
-            <!-- Project Card -->
-            <div class="project-card bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 overflow-hidden">
-                <div class="p-8 relative z-10">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-2xl font-bold text-slate-100 mb-2 md:mb-0">SoundScape — Spotify-like Web App</h3>
-                        <span class="text-sm font-medium text-blue-300 bg-blue-500/20 border border-blue-500/30 px-3 py-1 rounded-full self-start backdrop-blur-sm">Jan 2025 - Mar 2025</span>
-                    </div>
-
-                    <p class="text-slate-400 font-medium mb-4">DevOps Engineer</p>
-
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Built CI/CD pipeline using GitHub Actions</span>
-                        </li>
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Configured cloud infrastructure with Terraform</span>
-                        </li>
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Deployed scalable backend on Kubernetes</span>
-                        </li>
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Set up monitoring with Prometheus & Grafana</span>
-                        </li>
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Reduced deployment time by 80%</span>
-                        </li>
-                        <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5 check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-slate-300 group-hover:text-slate-100 transition-colors">Handled 1000 users with no lag</span>
-                        </li>
-                    </ul>
-
-                    <a href="https://github.com/oksesaneka22/SoundScape" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors group">
-                        <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        GitHub Repository
-                    </a>
-                </div>
-            </div>
-        </section>
-
         <!-- Added Education section between Projects and Contact -->
         <section class="fade-in-up stagger-6">
             <h2 class="text-3xl font-bold mb-6 section-title">🎓 Education</h2>
@@ -462,8 +474,9 @@
             </div>
         </section>
 
+        <!-- Added id="contact" for smooth scrolling from header button -->
         <!-- Contact Section -->
-        <section class="fade-in-up stagger-6">
+        <section id="contact" class="fade-in-up stagger-6">
             <h2 class="text-3xl font-bold mb-6 section-title">📬 Contact Me</h2>
             <div class="bg-slate-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-slate-800 p-8 space-y-4">
 
